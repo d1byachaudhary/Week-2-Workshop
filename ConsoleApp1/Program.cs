@@ -1,28 +1,21 @@
-﻿//Task 4
+﻿//Task 5
 using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        int[] numbers = { 5, 9, 1, 3, 7 };
+        DateTime birthDate = new DateTime(2002, 5, 20);
+        DateTime currentDate = DateTime.Now;
 
-        Console.WriteLine("Original array: " + string.Join(", ", numbers));
+        TimeSpan ageSpan = currentDate - birthDate;
+        int ageYears = (int)(ageSpan.TotalDays / 365.25);
 
-        Array.Sort(numbers);
-        Console.WriteLine("Sorted array: " + string.Join(", ", numbers));
+        Console.WriteLine($"Birthdate: {birthDate.ToShortDateString()}");
+        Console.WriteLine($"Current Date: {currentDate.ToShortDateString()}");
+        Console.WriteLine($"Age (approx): {ageYears} years");
 
-        Array.Reverse(numbers);
-        Console.WriteLine("Reversed array: " + string.Join(", ", numbers));
-
-        Console.WriteLine("Array elements using for loop:");
-        for (int index = 0; index < numbers.Length; index++)
-        {
-            Console.WriteLine($"Index {index}: {numbers[index]}");
-        }
-
-        int searchValue = 3;
-        int position = Array.IndexOf(numbers, searchValue);
-        Console.WriteLine($"Position of {searchValue} in array: {position}");
+        DateTime plusTenDays = birthDate.AddDays(10);
+        Console.WriteLine($"Birthdate + 10 days: {plusTenDays.ToShortDateString()}");
     }
 }
