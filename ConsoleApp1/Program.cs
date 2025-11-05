@@ -1,13 +1,29 @@
-﻿//Task 1
+﻿//Task 2
 using System;
+
+class Circle
+{
+    public const double PI = 3.14;
+
+    public static double CalculateArea(double radius)
+    {
+        return PI * radius * radius;
+    }
+
+    public static double CalculatePerimeter(double radius)
+    {
+        return 2 * PI * radius;
+    }
+}
 
 class Program
 {
     static void Main(string[] args)
     {
-        string userName = "Dibya Chaudhary";
-        int luckyNumber = 3;
+        Console.WriteLine($"Value of PI: {Circle.PI}");
 
-        Console.WriteLine($"Hello, {userName}! Your lucky number is {luckyNumber}.");
+        double radius = 5;
+        Console.WriteLine($"Area: {Circle.CalculateArea(radius)}");
+        Console.WriteLine($"Perimeter: {Circle.CalculatePerimeter(radius)}");
     }
 }
