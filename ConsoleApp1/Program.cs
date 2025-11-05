@@ -1,29 +1,33 @@
-﻿//Task 2
+﻿//Task 3
 using System;
-
-class Circle
-{
-    public const double PI = 3.14;
-
-    public static double CalculateArea(double radius)
-    {
-        return PI * radius * radius;
-    }
-
-    public static double CalculatePerimeter(double radius)
-    {
-        return 2 * PI * radius;
-    }
-}
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine($"Value of PI: {Circle.PI}");
+        byte b = 10;
+        short s = 200;
+        int i = 5000;
+        long l = 100000;
+        float f = 12.5f;
+        double d = 123.456;
+        decimal dec = 1234.5678m;
+        char c = 'A';
+        bool isTrue = true;
 
-        double radius = 5;
-        Console.WriteLine($"Area: {Circle.CalculateArea(radius)}");
-        Console.WriteLine($"Perimeter: {Circle.CalculatePerimeter(radius)}");
+        string intToString = i.ToString();
+        double stringToDouble = Convert.ToDouble("3.14");
+
+        Console.WriteLine($"byte: {b}");
+        Console.WriteLine($"short: {s}");
+        Console.WriteLine($"int: {i}");
+        Console.WriteLine($"long: {l}");
+        Console.WriteLine($"float: {f}");
+        Console.WriteLine($"double: {d}");
+        Console.WriteLine($"decimal: {dec}");
+        Console.WriteLine($"char: {c}");
+        Console.WriteLine($"bool: {isTrue}");
+        Console.WriteLine($"intToString: {intToString}");
+        Console.WriteLine($"stringToDouble: {stringToDouble}");
     }
 }
