@@ -1,21 +1,34 @@
-﻿//Task 5
+﻿//Task 6
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        DateTime birthDate = new DateTime(2002, 5, 20);
-        DateTime currentDate = DateTime.Now;
+        List<string> fruits = new List<string> { "Apple", "Banana", "Mango" };
+        fruits.Add("Orange");
+        fruits.Remove("Banana");
 
-        TimeSpan ageSpan = currentDate - birthDate;
-        int ageYears = (int)(ageSpan.TotalDays / 365.25);
+        Console.WriteLine("Fruits in list:");
+        foreach (var fruit in fruits)
+        {
+            Console.WriteLine(fruit);
+        }
 
-        Console.WriteLine($"Birthdate: {birthDate.ToShortDateString()}");
-        Console.WriteLine($"Current Date: {currentDate.ToShortDateString()}");
-        Console.WriteLine($"Age (approx): {ageYears} years");
+        Dictionary<int, string> fruitDict = new Dictionary<int, string>()
+        {
+            {1, "Apple"},
+            {2, "Mango"},
+            {3, "Orange"}
+        };
 
-        DateTime plusTenDays = birthDate.AddDays(10);
-        Console.WriteLine($"Birthdate + 10 days: {plusTenDays.ToShortDateString()}");
+        fruitDict.Add(4, "Grapes");
+
+        Console.WriteLine("\nFruit Dictionary (ID : Name):");
+        foreach (var kvp in fruitDict)
+        {
+            Console.WriteLine($"{kvp.Key} : {kvp.Value}");
+        }
     }
 }
