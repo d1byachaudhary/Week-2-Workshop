@@ -1,33 +1,28 @@
-﻿//Task 3
+﻿//Task 4
 using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        byte b = 10;
-        short s = 200;
-        int i = 5000;
-        long l = 100000;
-        float f = 12.5f;
-        double d = 123.456;
-        decimal dec = 1234.5678m;
-        char c = 'A';
-        bool isTrue = true;
+        int[] numbers = { 5, 9, 1, 3, 7 };
 
-        string intToString = i.ToString();
-        double stringToDouble = Convert.ToDouble("3.14");
+        Console.WriteLine("Original array: " + string.Join(", ", numbers));
 
-        Console.WriteLine($"byte: {b}");
-        Console.WriteLine($"short: {s}");
-        Console.WriteLine($"int: {i}");
-        Console.WriteLine($"long: {l}");
-        Console.WriteLine($"float: {f}");
-        Console.WriteLine($"double: {d}");
-        Console.WriteLine($"decimal: {dec}");
-        Console.WriteLine($"char: {c}");
-        Console.WriteLine($"bool: {isTrue}");
-        Console.WriteLine($"intToString: {intToString}");
-        Console.WriteLine($"stringToDouble: {stringToDouble}");
+        Array.Sort(numbers);
+        Console.WriteLine("Sorted array: " + string.Join(", ", numbers));
+
+        Array.Reverse(numbers);
+        Console.WriteLine("Reversed array: " + string.Join(", ", numbers));
+
+        Console.WriteLine("Array elements using for loop:");
+        for (int index = 0; index < numbers.Length; index++)
+        {
+            Console.WriteLine($"Index {index}: {numbers[index]}");
+        }
+
+        int searchValue = 3;
+        int position = Array.IndexOf(numbers, searchValue);
+        Console.WriteLine($"Position of {searchValue} in array: {position}");
     }
 }
